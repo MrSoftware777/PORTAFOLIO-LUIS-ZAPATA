@@ -1,0 +1,19 @@
+{
+  "name": "practice-portafolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./input.css -o ./output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "daisyui": "^5.8.1",
+    "tailwindcss": "^4.3.5"
+  }
+}

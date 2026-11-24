@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="es" data-theme="crimson-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis Fernando Zapata Vanegas - Portafolio</title>
+
+    <!-- Fuentes tipográficas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Se enlazan los estilos compilados de Tailwind y daisyUI -->
+    <link rel="stylesheet" href="./output.css" />
+    <!-- Agregamos nuestros estilos propios del portafolio -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <!-- Barra de navegación superior -->
+    <nav class="navbar portfolio-navbar sticky top-0 z-50 px-4 md:px-10">
+      <div class="navbar-start">
+        <button
+          type="button"
+          data-home
+          class="font-display text-base md:text-lg font-extrabold tracking-wider text-white flex items-center gap-2 cursor-pointer"
+        >
+          <span class="w-2.5 h-2.5 bg-primary inline-block"></span>
+          MrSoftware777
+        </button>
+      </div>
+    </nav>
+
+    <!-- Se muestra la vista inicial con el encabezado y los tres recuadros -->
+    <header
+      id="inicio"
+      class="hero-stage flex-1 flex flex-col justify-center py-10 px-4 md:px-10"
+    >
+      <div class="relative z-10 max-w-6xl mx-auto w-full text-center space-y-8">
+        <div class="space-y-3">
+          <span
+            class="badge badge-primary badge-outline font-semibold tracking-widest uppercase px-3 py-3 text-xs"
+          >
+            Portafolio Web
+          </span>
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase"
+          >
+            Luis Fernando <span class="text-primary">Zapata Vanegas</span>
+          </h1>
+          <p class="text-sm sm:text-base text-neutral-content/80 max-w-2xl mx-auto">
+            Estudiante de Tecnología en Desarrollo de Software · Quinto Semestre
+          </p>
+        </div>
+
+        <!-- Creamos los tres recuadros para abrir cada sección -->
+        <div class="switcher-grid" aria-label="Secciones del portafolio">
+          <button
+            type="button"
+            id="panel-sobre_mi"
+            data-open="sobre_mi"
+            class="switcher-panel panel-about"
+          >
+            <div class="panel-inner">
+              <div class="flex items-center justify-between">
+                <span class="badge badge-primary badge-sm font-bold">01</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-extrabold text-white tracking-tight">
+                Sobre mí
+              </h2>
+              <p class="text-xs sm:text-sm text-neutral-content/75">
+                No hay tres minutos ni cien palabras que me puedan definir.
+              </p>
+              <span class="panel-arrow">Abrir sección &rarr;</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            id="panel-proyectos"
+            data-open="proyectos"
+            class="switcher-panel panel-projects"
+          >
+            <div class="panel-inner">
+              <div class="flex items-center justify-between">
+                <span class="badge badge-primary badge-sm font-bold">02</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-extrabold text-white tracking-tight">
+                Mis Proyectos
+              </h2>
+              <p class="text-xs sm:text-sm text-neutral-content/75">
+                Demostrando que la calidad no se improvisa.
+              </p>
+              <span class="panel-arrow">Abrir sección &rarr;</span>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            id="panel-contacto"
+            data-open="contacto"
+            class="switcher-panel panel-contact"
+          >
+            <div class="panel-inner">
+              <div class="flex items-center justify-between">
+                <span class="badge badge-primary badge-sm font-bold">03</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-extrabold text-white tracking-tight">
+                Contacto
+              </h2>
+              <p class="text-xs sm:text-sm text-neutral-content/75">
+                Medios de contacto para hablar con el mejor desarrollador que va
+                a conocer.
+              </p>
+              <span class="panel-arrow">Abrir sección &rarr;</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Vistas a pantalla completa con zoom -->
+    <main>
+      <!-- Se define la sección Sobre mí -->
+      <section
+        id="sobre_mi"
+        class="section-view"
+        aria-hidden="true"
+        aria-labelledby="titulo-sobre-mi"
+      >
+        <div class="section-view-content max-w-4xl space-y-6">
+          <header class="flex items-center gap-3">
+            <span class="text-primary font-display font-bold text-sm">01</span>
+            <h2
+              id="titulo-sobre-mi"
+              class="text-2xl md:text-3xl font-extrabold text-white uppercase"
+            >
+              Sobre mí
+            </h2>
+          </header>
+
+          <div class="card about-card shadow-xl">
+            <div class="card-body p-6 md:p-8 space-y-6">
+              <p class="text-base leading-relaxed text-neutral-content/90 text-justify">
+                Soy un estudiante que cursa el quinto semestre de la carrera
+                Tecnología En Desarrollo De Software, soy una persona apasionada
+                por aprender la mayoría de conceptos en este bello arte de la
+                programación ya sea desde diseño (frontend), backend (lógica),
+                estructura (Bases de datos), funcionamiento del sistema
+                (hardware u operaciones) pero sé que lo que más me llama la
+                atención es la ciberseguridad y lo complejo, lenguajes como C++
+                o C son retos personales que pienso dominar al detalle para
+                ayudar en la industria.
+              </p>
+
+              <!-- Agregamos las etiquetas con las áreas de interés -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="badge badge-primary font-medium py-3 px-3"
+                  >Ciberseguridad</span
+                >
+                <span
+                  class="badge badge-primary badge-outline font-medium py-3 px-3"
+                  >C / C++</span
+                >
+                <span class="badge badge-neutral border border-white/15 py-3 px-3"
+                  >Frontend</span
+                >
+                <span class="badge badge-neutral border border-white/15 py-3 px-3"
+                  >Backend</span
+                >
+                <span class="badge badge-neutral border border-white/15 py-3 px-3"
+                  >Bases de datos</span
+                >
+                <span class="badge badge-neutral border border-white/15 py-3 px-3"
+                  >Hardware y Operaciones</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex justify-center">
+            <button
+              type="button"
+              data-back
+              class="btn btn-outline border-white/25 text-white hover:border-primary hover:bg-primary px-8"
+            >
+              &larr; Atrás (Esc)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de proyectos en formato vertical -->
+      <section
+        id="proyectos"
+        class="section-view"
+        aria-hidden="true"
+        aria-labelledby="titulo-proyectos"
+      >
+        <div class="section-view-content max-w-4xl space-y-10">
+          <header class="flex flex-wrap items-center justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex items-center gap-3">
+                <span class="text-primary font-display font-bold text-sm"
+                  >02</span
+                >
+                <h2
+                  id="titulo-proyectos"
+                  class="text-2xl md:text-3xl font-extrabold text-white uppercase"
+                >
+                  Mis Proyectos
+                </h2>
+              </div>
+              <div class="section-accent-line"></div>
+            </div>
+
+            <button
+              type="button"
+              data-back
+              class="btn btn-outline btn-sm border-white/25 text-white hover:border-primary hover:bg-primary px-5"
+            >
+              &larr; Atrás (Esc)
+            </button>
+          </header>
+
+          <div class="flex flex-col gap-10">
+            <!-- Se incluye el proyecto MOTOTEC -->
+            <article class="card project-card shadow-xl">
+              <div class="card-body p-6 md:p-8 space-y-4">
+                <div class="space-y-3">
+                  <span
+                    class="badge badge-primary badge-outline badge-sm font-semibold"
+                  >
+                    Álgebra Lineal · 2025-1
+                  </span>
+                  <h3
+                    class="card-title text-xl md:text-2xl font-bold text-white leading-snug"
+                  >
+                    Matrices para la libertad - MOTOTEC
+                  </h3>
+                  <p
+                    class="text-sm md:text-base leading-relaxed text-neutral-content/85 text-justify"
+                  >
+                    Este fue mi proyecto final para la materia de álgebra
+                    lineal, fue realizado en el año 2025 en su primer semestre
+                    (2025-1), el objetivo fue predecir las ventas de
+                    motocicletas y la demanda de componentes usando método de
+                    mínimos cuadrados y álgebra matricial en un contexto donde
+                    teníamos una guerra de aranceles ocurriendo en ese momento,
+                    para agregarle algo más diferente se le dio una interfaz de
+                    aplicación web que se ejecuta localmente para que sea más
+                    vistoso a la hora de revisar los resultados, además de que
+                    se le dio un enfoque liberal libertario. Este proyecto
+                    cuenta con su repositorio en GitHub además de un video
+                    explicativo donde comentamos cómo se realizó el código, y
+                    cuáles fueron los resultados de nuestros cálculos.
+                  </p>
+                </div>
+
+                <div class="card-actions pt-1 flex flex-wrap gap-2">
+                  <a
+                    href="https://github.com/MrSoftware777/MOTOTEC---MATRICES-PARA-LA-LIBERTAD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://youtu.be/6v6g98dIkuA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-sm border-white/25 text-white hover:border-primary hover:bg-primary"
+                  >
+                    Video Explicativo
+                  </a>
+                </div>
+
+                <!-- Agregamos las capturas de MOTOTEC en orden vertical -->
+                <div class="project-gallery">
+                  <figure class="project-shot">
+                    <img
+                      src="./img/mototec-1.png"
+                      alt="Captura 1 del proyecto Matrices para la libertad - MOTOTEC"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="project-shot">
+                    <img
+                      src="./img/mototec-2.png"
+                      alt="Captura 2 del proyecto Matrices para la libertad - MOTOTEC"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="project-shot">
+                    <img
+                      src="./img/mototec-3.png"
+                      alt="Captura 3 del proyecto Matrices para la libertad - MOTOTEC"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <!-- Proyecto de cola de prioridad en hospital -->
+            <article class="card project-card shadow-xl">
+              <div class="card-body p-6 md:p-8 space-y-4">
+                <div class="space-y-3">
+                  <span
+                    class="badge badge-primary badge-outline badge-sm font-semibold"
+                  >
+                    Colas de Prioridad
+                  </span>
+                  <h3
+                    class="card-title text-xl md:text-2xl font-bold text-white leading-snug"
+                  >
+                    Cola de prioridad de un hospital
+                  </h3>
+                  <p
+                    class="text-sm md:text-base leading-relaxed text-neutral-content/85 text-justify"
+                  >
+                    El objetivo principal de este mini proyecto fue comprender
+                    el concepto de colas de prioridad, sabemos que este mismo se
+                    puede implementar a diferentes sistemas pero en este caso se
+                    hizo para un hospital enfocado en el área de urgencias para
+                    solucionar el problema de la espera infinita de pacientes
+                    cuyos síntomas no ameritan una atención inmediata pero no
+                    por ello quiere decir que deban de pasar todo el día en el
+                    hospital, el proyecto cuenta con su link a Google Colab para
+                    su lectura y ejecución.
+                  </p>
+                </div>
+
+                <div class="card-actions pt-1">
+                  <a
+                    href="https://colab.research.google.com/drive/1SEB5LuSn3wrxqdvAHQlrkPs2CpaE1IwJ?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Abrir en Google Colab
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Se agrega el proyecto de metaheurística de vecindad -->
+            <article class="card project-card shadow-xl">
+              <div class="card-body p-6 md:p-8 space-y-4">
+                <div class="space-y-3">
+                  <span
+                    class="badge badge-primary badge-outline badge-sm font-semibold"
+                  >
+                    Estructura de Datos
+                  </span>
+                  <h3
+                    class="card-title text-xl md:text-2xl font-bold text-white leading-snug"
+                  >
+                    Metaheurística de vecindad
+                  </h3>
+                  <p
+                    class="text-sm md:text-base leading-relaxed text-neutral-content/85 text-justify"
+                  >
+                    El objetivo de este proyecto final de la materia de
+                    estructura de datos era pasar el problema de vecindad que
+                    habíamos realizado en Excel a código, esto para afianzar los
+                    conceptos vistos en la materia, un proyecto complejo que
+                    llevó hasta una semana para poder terminarlo y presentarlo
+                    como era debido, el link se encuentra disponible para su
+                    lectura y ejecución.
+                  </p>
+                </div>
+
+                <div class="card-actions pt-1">
+                  <a
+                    href="https://colab.research.google.com/drive/1yF8YARqlyvZQRhRHn8KF7mUue-g5IJQ0?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Abrir en Google Colab
+                  </a>
+                </div>
+
+                <!-- Capturas de metaheurística de vecindad -->
+                <div class="project-gallery">
+                  <figure class="project-shot">
+                    <img
+                      src="./img/metaheuristica-vecindad-1.png"
+                      alt="Captura 1 del proyecto Metaheurística de vecindad"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="project-shot">
+                    <img
+                      src="./img/metaheuristica-vecindad-2.png"
+                      alt="Captura 2 del proyecto Metaheurística de vecindad"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="pt-2 flex justify-center">
+            <button
+              type="button"
+              data-back
+              class="btn btn-outline border-white/25 text-white hover:border-primary hover:bg-primary px-8"
+            >
+              &larr; Atrás (Esc)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Definimos la sección de contacto -->
+      <section
+        id="contacto"
+        class="section-view"
+        aria-hidden="true"
+        aria-labelledby="titulo-contacto"
+      >
+        <div class="section-view-content max-w-4xl space-y-6">
+          <header class="space-y-2">
+            <div class="flex items-center gap-3">
+              <span class="text-primary font-display font-bold text-sm">03</span>
+              <h2
+                id="titulo-contacto"
+                class="text-2xl md:text-3xl font-extrabold text-white uppercase"
+              >
+                Contacto
+              </h2>
+            </div>
+            <div class="section-accent-line"></div>
+          </header>
+
+          <div class="card contact-card shadow-2xl">
+            <div
+              class="card-body p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+            >
+              <div class="space-y-3">
+                <h3
+                  class="text-xl md:text-2xl font-extrabold text-white uppercase"
+                >
+                  Luis Fernando Zapata Vanegas
+                </h3>
+                <p
+                  class="text-sm text-primary font-semibold tracking-wide uppercase"
+                >
+                  Tecnología en Desarrollo de Software
+                </p>
+                <p class="text-sm text-neutral-content/80 max-w-md">
+                  Me pueden contactar por los siguientes medios para proyectos
+                  académicos, colaboraciones o consultas.
+                </p>
+              </div>
+
+              <div class="space-y-4">
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-4">
+                    <span class="contact-icon-circle" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <p
+                        class="text-xs uppercase tracking-wider text-neutral-content/60"
+                      >
+                        Correo
+                      </p>
+                      <a
+                        href="mailto:luis.zapata2@utp.edu.co"
+                        class="text-base font-semibold text-white hover:text-primary transition-colors break-all"
+                      >
+                        luis.zapata2@utp.edu.co
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="pt-2">
+                  <a
+                    href="mailto:luis.zapata2@utp.edu.co"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Enviar correo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex justify-center">
+            <button
+              type="button"
+              data-back
+              class="btn btn-outline border-white/25 text-white hover:border-primary hover:bg-primary px-8"
+            >
+              &larr; Atrás (Esc)
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página principal -->
+    <footer
+      class="footer footer-center bg-base-200 text-neutral-content/75 border-t border-primary/25 p-5 text-sm"
+    >
+      <p>Derechos reservados 2026 · Luis Fernando Zapata Vanegas</p>
+    </footer>
+
+    <!-- Se controla la apertura y cierre con zoom de cada vista -->
+    <script>
+      const openButtons = document.querySelectorAll("[data-open]");
+      const backButtons = document.querySelectorAll("[data-back]");
+      const homeButton = document.querySelector("[data-home]");
+
+      let activeSection = null;
+      let closeTimer = null;
+
+      // Calculamos el centro del recuadro para animar el zoom desde ese punto
+      function setZoomOrigin(section, sectionId) {
+        const panel = document.getElementById(`panel-${sectionId}`);
+        if (!panel) return;
+        const rect = panel.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+        section.style.setProperty("--origin-x", `${originX}px`);
+        section.style.setProperty("--origin-y", `${originY}px`);
+      }
+
+      function openSection(sectionId) {
+        const target = document.getElementById(sectionId);
+        if (!target || activeSection === target) return;
+
+        if (activeSection) {
+          activeSection.classList.remove("is-open", "is-closing");
+          activeSection.setAttribute("aria-hidden", "true");
+        }
+
+        clearTimeout(closeTimer);
+        setZoomOrigin(target, sectionId);
+        target.scrollTop = 0;
+        target.classList.remove("is-closing");
+        target.setAttribute("aria-hidden", "false");
+
+        // Se fuerza el reflow para que arranque la transición
+        void target.offsetWidth;
+        target.classList.add("is-open");
+        document.body.classList.add("view-open");
+
+        activeSection = target;
+      }
+
+      function closeActiveSection() {
+        if (!activeSection) return;
+
+        const closing = activeSection;
+        closing.classList.remove("is-open");
+        closing.classList.add("is-closing");
+        closing.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("view-open");
+
+        activeSection = null;
+
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(() => {
+          closing.classList.remove("is-closing");
+        }, 280);
+      }
+
+      openButtons.forEach((btn) => {
+        btn.addEventListener("click", () => openSection(btn.dataset.open));
+      });
+
+      backButtons.forEach((btn) => {
+        btn.addEventListener("click", closeActiveSection);
+      });
+
+      if (homeButton) {
+        homeButton.addEventListener("click", closeActiveSection);
+      }
+
+      // Cierre de sección con la tecla Escape
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && activeSection) {
+          closeActiveSection();
+        }
+      });
+    </script>
+  </body>
+</html>
